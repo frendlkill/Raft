@@ -57,10 +57,10 @@ func Make(addrs []string, me int) (rf *Raft, err error) {
 
 type T1 struct{}
 
-//func (rf *Raft) GetState(p T1, ret *int) error {
-//	*ret = rf.me
-//	return nil
-//}
+func (rf *Raft) GetState(p T1, ret *int) error {
+	*ret = rf.me
+	return nil
+}
 
 func (rf *Raft) initConn(addrs []string) {
 	peers := make([]*Client, 0)
